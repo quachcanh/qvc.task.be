@@ -1,0 +1,17 @@
+D:\Study\DoAnTotNghiep\Project\BE\QVC.TASK\QVC.TASK.BL\bin\Debug\net6.0\QVC.TASK.BL.deps.json
+D:\Study\DoAnTotNghiep\Project\BE\QVC.TASK\QVC.TASK.BL\bin\Debug\net6.0\QVC.TASK.BL.dll
+D:\Study\DoAnTotNghiep\Project\BE\QVC.TASK\QVC.TASK.BL\bin\Debug\net6.0\QVC.TASK.BL.pdb
+D:\Study\DoAnTotNghiep\Project\BE\QVC.TASK\QVC.TASK.BL\bin\Debug\net6.0\QVC.TASK.Common.dll
+D:\Study\DoAnTotNghiep\Project\BE\QVC.TASK\QVC.TASK.BL\bin\Debug\net6.0\QVC.TASK.DL.dll
+D:\Study\DoAnTotNghiep\Project\BE\QVC.TASK\QVC.TASK.BL\bin\Debug\net6.0\QVC.TASK.Common.pdb
+D:\Study\DoAnTotNghiep\Project\BE\QVC.TASK\QVC.TASK.BL\bin\Debug\net6.0\QVC.TASK.DL.pdb
+D:\Study\DoAnTotNghiep\Project\BE\QVC.TASK\QVC.TASK.BL\obj\Debug\net6.0\QVC.TASK.BL.csproj.AssemblyReference.cache
+D:\Study\DoAnTotNghiep\Project\BE\QVC.TASK\QVC.TASK.BL\obj\Debug\net6.0\QVC.TASK.BL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Study\DoAnTotNghiep\Project\BE\QVC.TASK\QVC.TASK.BL\obj\Debug\net6.0\QVC.TASK.BL.AssemblyInfoInputs.cache
+D:\Study\DoAnTotNghiep\Project\BE\QVC.TASK\QVC.TASK.BL\obj\Debug\net6.0\QVC.TASK.BL.AssemblyInfo.cs
+D:\Study\DoAnTotNghiep\Project\BE\QVC.TASK\QVC.TASK.BL\obj\Debug\net6.0\QVC.TASK.BL.csproj.CoreCompileInputs.cache
+D:\Study\DoAnTotNghiep\Project\BE\QVC.TASK\QVC.TASK.BL\obj\Debug\net6.0\QVC.TASK.BL.csproj.CopyComplete
+D:\Study\DoAnTotNghiep\Project\BE\QVC.TASK\QVC.TASK.BL\obj\Debug\net6.0\QVC.TASK.BL.dll
+D:\Study\DoAnTotNghiep\Project\BE\QVC.TASK\QVC.TASK.BL\obj\Debug\net6.0\refint\QVC.TASK.BL.dll
+D:\Study\DoAnTotNghiep\Project\BE\QVC.TASK\QVC.TASK.BL\obj\Debug\net6.0\QVC.TASK.BL.pdb
+D:\Study\DoAnTotNghiep\Project\BE\QVC.TASK\QVC.TASK.BL\obj\Debug\net6.0\ref\QVC.TASK.BL.dll
