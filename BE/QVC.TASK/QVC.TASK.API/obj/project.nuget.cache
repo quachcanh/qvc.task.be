@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SsQP1ps5nMvAuv1KkoScYhAhqqPT5wK59T2pyvWIRMd3andph3fDiVuQxaYpTltQ9Ux1QIk8pxnrRSEw8YDJuA==",
+  "dgSpecHash": "e+5gj1cRRLFHdgnc5CfhNWBkjbI/mjBWyavmOiVebDr+z2VA0EWrykpX6/Kw04pHvuTVYGBw4ncVHfe17EaLdA==",
   "success": true,
-  "projectFilePath": "D:\\Study\\DoAnTotNghiep\\Project\\BE\\QVC.TASK\\QVC.TASK.API\\QVC.TASK.API.csproj",
+  "projectFilePath": "D:\\Study\\ĐATN\\BE\\qvc.task.be\\BE\\QVC.TASK\\QVC.TASK.API\\QVC.TASK.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\canhq\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\canhq\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",

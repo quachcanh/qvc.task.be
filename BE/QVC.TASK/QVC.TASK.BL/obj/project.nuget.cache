@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iy/+wgRtG3zCPvQS8tWLg3Lf7aDhkbqit9f9j32oDRpjcDuBbjMNOM42+zc7K/FyEILt5PDruW39xDyVToKzTw==",
+  "dgSpecHash": "p3OG7Km28oTZDFNfuD8oUap56yx/hQEOj2G33yLViq1IDZFfmFAnQG5EUF4wGID/NW0hHYwiLHEF4QuBSSf6eA==",
   "success": true,
-  "projectFilePath": "D:\\Study\\DoAnTotNghiep\\Project\\BE\\QVC.TASK\\QVC.TASK.BL\\QVC.TASK.BL.csproj",
+  "projectFilePath": "D:\\Study\\ĐATN\\BE\\qvc.task.be\\BE\\QVC.TASK\\QVC.TASK.BL\\QVC.TASK.BL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\canhq\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\canhq\\.nuget\\packages\\mysqlconnector\\2.2.5\\mysqlconnector.2.2.5.nupkg.sha512"
