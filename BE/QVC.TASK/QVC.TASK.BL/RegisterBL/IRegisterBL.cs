@@ -31,5 +31,12 @@ namespace QVC.TASK.BL
         /// <param name="record"></param>
         /// <returns></returns>
         public int UpdateByUserNameEmployee(Employee record);
+
+        /// <summary>
+        /// Thực hiện tạo db theo doamin
+        /// </summary>
+        /// <param name="username"></param>
+        /// <returns></returns>
+        public int CreateDBDomain(Employee record);
     }
 }

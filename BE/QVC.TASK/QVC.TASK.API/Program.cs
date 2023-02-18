@@ -9,6 +9,8 @@ builder.Services.AddScoped(typeof(IBaseDL<>), typeof(BaseDL<>));
 builder.Services.AddScoped(typeof(IBaseBL<>), typeof(BaseBL<>));
 builder.Services.AddScoped(typeof(IRegisterBL), typeof(RegisterBL));
 builder.Services.AddScoped(typeof(IRegisterDL), typeof(RegisterDL));
+builder.Services.AddScoped(typeof(ILoginBL), typeof(LoginBL));
+builder.Services.AddScoped(typeof(ILoginDL), typeof(LoginDL));
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

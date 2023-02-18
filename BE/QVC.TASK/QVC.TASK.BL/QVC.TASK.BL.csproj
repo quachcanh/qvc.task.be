@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.27.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\QVC.TASK.Common\QVC.TASK.Common.csproj" />
     <ProjectReference Include="..\QVC.TASK.DL\QVC.TASK.DL.csproj" />
   </ItemGroup>

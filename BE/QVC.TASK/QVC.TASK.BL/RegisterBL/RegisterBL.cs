@@ -25,6 +25,12 @@ namespace QVC.TASK.BL
         }
 
         #endregion
+
+        /// <summary>
+        /// Thêm mới bản ghi thông tin user
+        /// </summary>
+        /// <param name="record">bản ghi</param>
+        /// <returns></returns>
         public int SignUp(Employee record)
         {
             // Sinh mã xác thực tài khoản
@@ -40,6 +46,10 @@ namespace QVC.TASK.BL
             return result;
         }
 
+        /// <summary>
+        /// Thực hiện gửi mã xác thực
+        /// </summary>
+        /// <param name="record"></param>
         public void SentEmail(Employee record)
         {
             try
@@ -68,14 +78,36 @@ namespace QVC.TASK.BL
             }
         }
 
+        /// <summary>
+        /// Lấy thông tin nhân viên
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="username"></param>
+        /// <param name="email"></param>
+        /// <returns></returns>
         public Employee GetOneEmployee(Guid? id, string? username, string? email)
         {
             return _registerDL.GetOneEmployee(id, username, email);
         }
 
+        /// <summary>
+        /// Sửa thông tin nhân viên
+        /// </summary>
+        /// <param name="record"></param>
+        /// <returns></returns>
         public int UpdateByUserNameEmployee(Employee record)
         {
             return _registerDL.UpdateByUserNameEmployee(record);
+        }
+
+        /// <summary>
+        /// Thực hiện tạo db theo doamin
+        /// </summary>
+        /// <param name="username"></param>
+        /// <returns></returns>
+        public int CreateDBDomain(Employee record)
+        {
+            return _registerDL.CreateDBDomain(record);
         }
     }
 }

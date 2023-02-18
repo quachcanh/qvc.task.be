@@ -17,6 +17,13 @@ namespace QVC.TASK.DL
         public int SignUp(Employee record);
 
         /// <summary>
+        /// Chuyển thông tin nhân viên sang db domain
+        /// </summary>
+        /// <param name="record"></param>
+        /// <returns></returns>
+        public int SyncEmployeeToDomain(Employee record);
+
+        /// <summary>
         /// Lấy thông tin nhân viên
         /// </summary>
         /// <param name="id"></param>
@@ -31,5 +38,12 @@ namespace QVC.TASK.DL
         /// <param name="record"></param>
         /// <returns></returns>
         public int UpdateByUserNameEmployee(Employee record);
+
+        /// <summary>
+        /// Thực hiện tạo db theo doamin
+        /// </summary>
+        /// <param name="username"></param>
+        /// <returns></returns>
+        public int CreateDBDomain(Employee record);
     }
 }
