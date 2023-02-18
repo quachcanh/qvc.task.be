@@ -23,5 +23,26 @@ namespace QVC.TASK.BL
         }
 
         #endregion
+
+        /// <summary>
+        /// Lấy tất cả bản ghi
+        /// </summary>
+        /// <returns>Danh sách đối tượng bản ghi</returns>
+        /// Created by: QVCANH (28/11/2022)
+        public List<T> GetAll(string domain)
+        {
+            return _baseDL.GetAll(domain);
+        }
+
+        /// <summary>
+        /// Lấy danh sách bản ghi theo id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="domaindb"></param>
+        /// <returns></returns>
+        public List<T> GetAllById(string id, string domaindb)
+        {
+            return _baseDL.GetAllById(id, domaindb);
+        }
     }
 }

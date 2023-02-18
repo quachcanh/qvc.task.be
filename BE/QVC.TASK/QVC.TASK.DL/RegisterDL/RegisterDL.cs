@@ -270,6 +270,11 @@ namespace QVC.TASK.DL
 
                 // Đồng bộ thông tin nhân viên qua db domain
                 rowchange = SyncEmployeeToDomain(record);
+                if (rowchange > 0)
+                {
+                    // Tạo phòng ban cá nhân mặc định
+                    rowchange = CreateDepartmentDefault(record.UserName, record.EmployeeName);
+                }
                 CloseConnection(mySqlConnection);
             }
             return rowchange;
@@ -312,6 +317,77 @@ namespace QVC.TASK.DL
 
             // Khởi tạo kết nối tới Database
             using (var mySqlConnection = new MySqlConnector.MySqlConnection(String.Format(Database.DBDomain, record.UserName + "_qvc_task")))
+            {
+                // Mở kết nối
+                OpenConnection(mySqlConnection);
+
+                // Khởi tạo Transaction
+                using var transaction = mySqlConnection.BeginTransaction();
+                try
+                {
+                    // Thực hiện gọi vào Database để chạy stored procedure
+                    rowAffected = mySqlConnection.Execute(storedProcedureName, parameters, transaction, commandType: System.Data.CommandType.StoredProcedure);
+
+                    // Kiểm tra kết quả
+                    if (rowAffected > 0)
+                    {
+                        // Commit transaction
+                        transaction.Commit();
+                    }
+                    else
+                    {
+                        // Rollback transaction
+                        transaction.Rollback();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Log lỗi
+                    Console.WriteLine(ex.Message);
+
+                    // Rollback transaction
+                    transaction.Rollback();
+                }
+                finally
+                {
+                    // Đóng kết nối
+                    CloseConnection(mySqlConnection);
+                }
+
+                // Trả về số bản ghi bị ảnh hưởng
+                return rowAffected;
+            };
+        }
+
+        /// <summary>
+        /// Tạo phòng ban cá nhân mặc định
+        /// </summary>
+        /// <param name="department"></param>
+        /// <returns></returns>
+        public int CreateDepartmentDefault(string domain, string fulname)
+        {
+            // Chuẩn bị tên stored procedure
+            string storedProcedureName = "Proc_Insert_Department";
+
+            // Chuẩn bị tham số đầu vào cho stored procedure
+            var parameters = new DynamicParameters();
+
+            // Thêm tham số đầu vào cho parameters
+            parameters.Add("@DepartmentID", Guid.NewGuid());
+            parameters.Add("@DepartmentCode", "CANHAN");
+            parameters.Add("@DepartmentName", "Cá nhân");
+            parameters.Add("@CompanyID", null);
+            parameters.Add("@ParentID", null);
+            parameters.Add("@CreatedDate", DateTime.Now);
+            parameters.Add("@CreatedBy", fulname);
+            parameters.Add("@ModifiedDate", DateTime.Now);
+            parameters.Add("@ModifiedBy", "");
+
+            // Khởi tạo đối tượng muốn lấy
+            int rowAffected = 0;
+
+            // Khởi tạo kết nối tới Database
+            using (var mySqlConnection = new MySqlConnector.MySqlConnection(String.Format(Database.DBDomain, domain + "_qvc_task")))
             {
                 // Mở kết nối
                 OpenConnection(mySqlConnection);

@@ -45,5 +45,13 @@ namespace QVC.TASK.DL
         /// <param name="username"></param>
         /// <returns></returns>
         public int CreateDBDomain(Employee record);
+
+        /// <summary>
+        /// Tạo phòng ban cá nhân mặc định
+        /// </summary>
+        /// <param name="domain"></param>
+        /// <param name="fulname"></param>
+        /// <returns></returns>
+        public int CreateDepartmentDefault(string domain, string fulname);
     }
 }
