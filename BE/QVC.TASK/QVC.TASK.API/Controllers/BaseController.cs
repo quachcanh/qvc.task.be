@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using QVC.TASK.BL;
+using QVC.TASK.Common;
 
 namespace QVC.TASK.API.Controllers
 {
@@ -67,6 +68,30 @@ namespace QVC.TASK.API.Controllers
 
                 //Xử lý kết quả trả về
                 if (record != null)
+                {
+                    return StatusCode(StatusCodes.Status200OK, record);
+                }
+                else
+                {
+                    return StatusCode(StatusCodes.Status404NotFound);
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex);
+            }
+        }
+
+        [HttpPost]
+        [Route("insert")]
+        public IActionResult Insert([FromBody] DataInsert<T> dataInsert)
+        {
+            try
+            {
+                var record = _baseBL.Insert(dataInsert);
+
+                //Xử lý kết quả trả về
+                if (record > 0)
                 {
                     return StatusCode(StatusCodes.Status200OK, record);
                 }

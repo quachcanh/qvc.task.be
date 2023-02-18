@@ -144,23 +144,22 @@ ADD UNIQUE INDEX EmployeeCode (EmployeeCode);
 ALTER TABLE employee
 ADD UNIQUE INDEX UserName (UserName);
 
-DELIMITER $$
+
 
 --
 -- Create procedure `Proc_Insert_Employee`
 --
-CREATE DEFINER = 'root'@'localhost'
+CREATE 
 PROCEDURE Proc_Insert_Employee (IN `@EmployeeID` char(36), IN `@EmployeeCode` varchar(20), IN `@EmployeeName` varchar(100), IN `@UserName` varchar(128), IN `@Password` varchar(128), IN `@AccountType` tinyint, IN `@DateOfBirth` date, IN `@Gender` tinyint, IN `@Email` varchar(100), IN `@PhoneNumber` varchar(50), IN `@Address` varchar(255), IN `@CompanyID` char(36), IN `@DepartmentID` char(36), IN `@PositionID` char(36), IN `@CreatedDate` datetime, IN `@CreatedBy` varchar(100), IN `@ModifiedDate` datetime, IN `@ModifiedBy` varchar(100), IN `@Code` int)
 BEGIN
   INSERT INTO employee (EmployeeID, EmployeeCode, EmployeeName, UserName, Password, AccountType, DateOfBirth, Gender, Email, PhoneNumber, Address, CompanyID, DepartmentID, PositionID, CreatedDate, CreatedBy, ModifiedDate, ModifiedBy, Code)
     VALUES (`@EmployeeID`, `@EmployeeCode`, `@EmployeeName`, `@UserName`, `@Password`, `@AccountType`, `@DateOfBirth`, `@Gender`, `@Email`, `@PhoneNumber`, `@Address`, `@CompanyID`, `@DepartmentID`, `@PositionID`, `@CreatedDate`, `@CreatedBy`, `@ModifiedDate`, `@ModifiedBy`, `@Code`);
-END
-$$
+END;
 
 --
 -- Create procedure `Proc_GetByUserPass_Employee`
 --
-CREATE DEFINER = 'root'@'localhost'
+CREATE 
 PROCEDURE Proc_GetByUserPass_Employee (IN `@UserName` varchar(128), IN `@Email` varchar(100), IN `@Password` varchar(128))
 COMMENT 'Kiểm tra đăng nhập'
 BEGIN
@@ -171,10 +170,7 @@ BEGIN
   AND e.Password = `@Password`)
   OR (e.Email = `@Email`
   AND e.Password = `@Password`);
-END
-$$
-
-DELIMITER ;
+END;
 
 --
 -- Create table `project`
@@ -204,12 +200,12 @@ COMMENT = 'Bảng dự án';
 ALTER TABLE project
 ADD UNIQUE INDEX ProjectCode (ProjectCode);
 
-DELIMITER $$
+
 
 --
 -- Create procedure `Proc_GetById_Project`
 --
-CREATE DEFINER = 'root'@'localhost'
+CREATE 
 PROCEDURE Proc_GetById_Project (IN `@Id` char(36))
 COMMENT 'Lấy danh sách dự án theo id phòng ban'
 BEGIN
@@ -218,10 +214,7 @@ BEGIN
   FROM project p
   WHERE p.DepartmentID = `@Id`
   ORDER BY p.CreatedDate ASC;
-END
-$$
-
-DELIMITER ;
+END;
 
 --
 -- Create table `department`
@@ -249,34 +242,30 @@ COMMENT = 'Bảng phòng ban';
 ALTER TABLE department
 ADD UNIQUE INDEX DepartmentCode (DepartmentCode);
 
-DELIMITER $$
+
 
 --
 -- Create procedure `Proc_Insert_Department`
 --
-CREATE DEFINER = 'root'@'localhost'
+CREATE 
 PROCEDURE Proc_Insert_Department (IN `@DepartmentID` char(36), IN `@DepartmentCode` varchar(20), IN `@DepartmentName` varchar(255), IN `@CompanyID` char(36), IN `@ParentID` char(36), IN `@CreatedDate` datetime, IN `@CreatedBy` varchar(100), IN `@ModifiedDate` datetime, IN `@ModifiedBy` varchar(100))
 COMMENT 'Thêm mới phòng ban'
 BEGIN
   INSERT INTO department (DepartmentID, DepartmentCode, DepartmentName, CompanyID, ParentID, CreatedDate, CreatedBy, ModifiedDate, ModifiedBy)
     VALUES (`@DepartmentID`, `@DepartmentCode`, `@DepartmentName`, `@CompanyID`, `@ParentID`, `@CreatedDate`, `@CreatedBy`, `@ModifiedDate`, `@ModifiedBy`);
-END
-$$
+END;
 
 --
 -- Create procedure `Proc_GetAll_Department`
 --
-CREATE DEFINER = 'root'@'localhost'
+CREATE 
 PROCEDURE Proc_GetAll_Department ()
 COMMENT 'Lất tất cả danh sách phòng ban'
 BEGIN
   SELECT
     *
   FROM department d;
-END
-$$
-
-DELIMITER ;
+END;
 
 --
 -- Create table `role`

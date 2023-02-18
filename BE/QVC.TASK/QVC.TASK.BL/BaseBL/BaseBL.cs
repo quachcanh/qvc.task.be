@@ -1,4 +1,5 @@
-﻿using QVC.TASK.DL;
+﻿using QVC.TASK.Common;
+using QVC.TASK.DL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,6 +44,16 @@ namespace QVC.TASK.BL
         public List<T> GetAllById(string id, string domaindb)
         {
             return _baseDL.GetAllById(id, domaindb);
+        }
+
+        /// <summary>
+        /// >Thêm mới 1 bản ghi
+        /// </summary>
+        /// <param name="dataInsert"></param>
+        /// <returns></returns>
+        public int Insert(DataInsert<T> dataInsert)
+        {
+            return _baseDL.Insert(dataInsert);
         }
     }
 }

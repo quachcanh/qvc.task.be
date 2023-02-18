@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Study\\DoAnTotNghiep\\Project\\BE\\QVC.TASK\\QVC.TASK.API\\QVC.TASK.API.csproj": {}
+    "E:\\CodeCuaEmCanh-KhongDuocXoa\\QVC.TASK\\qvc.task.be\\BE\\QVC.TASK\\QVC.TASK.API\\QVC.TASK.API.csproj": {}
   },
   "projects": {
-    "D:\\Study\\DoAnTotNghiep\\Project\\BE\\QVC.TASK\\QVC.TASK.API\\QVC.TASK.API.csproj": {
+    "E:\\CodeCuaEmCanh-KhongDuocXoa\\QVC.TASK\\qvc.task.be\\BE\\QVC.TASK\\QVC.TASK.API\\QVC.TASK.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Study\\DoAnTotNghiep\\Project\\BE\\QVC.TASK\\QVC.TASK.API\\QVC.TASK.API.csproj",
+        "projectUniqueName": "E:\\CodeCuaEmCanh-KhongDuocXoa\\QVC.TASK\\qvc.task.be\\BE\\QVC.TASK\\QVC.TASK.API\\QVC.TASK.API.csproj",
         "projectName": "QVC.TASK.API",
-        "projectPath": "D:\\Study\\DoAnTotNghiep\\Project\\BE\\QVC.TASK\\QVC.TASK.API\\QVC.TASK.API.csproj",
-        "packagesPath": "C:\\Users\\canhq\\.nuget\\packages\\",
-        "outputPath": "D:\\Study\\DoAnTotNghiep\\Project\\BE\\QVC.TASK\\QVC.TASK.API\\obj\\",
+        "projectPath": "E:\\CodeCuaEmCanh-KhongDuocXoa\\QVC.TASK\\qvc.task.be\\BE\\QVC.TASK\\QVC.TASK.API\\QVC.TASK.API.csproj",
+        "packagesPath": "C:\\Users\\1chut\\.nuget\\packages\\",
+        "outputPath": "E:\\CodeCuaEmCanh-KhongDuocXoa\\QVC.TASK\\qvc.task.be\\BE\\QVC.TASK\\QVC.TASK.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\canhq\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\1chut\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,11 +28,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Study\\DoAnTotNghiep\\Project\\BE\\QVC.TASK\\QVC.TASK.BL\\QVC.TASK.BL.csproj": {
-                "projectPath": "D:\\Study\\DoAnTotNghiep\\Project\\BE\\QVC.TASK\\QVC.TASK.BL\\QVC.TASK.BL.csproj"
+              "E:\\CodeCuaEmCanh-KhongDuocXoa\\QVC.TASK\\qvc.task.be\\BE\\QVC.TASK\\QVC.TASK.BL\\QVC.TASK.BL.csproj": {
+                "projectPath": "E:\\CodeCuaEmCanh-KhongDuocXoa\\QVC.TASK\\qvc.task.be\\BE\\QVC.TASK\\QVC.TASK.BL\\QVC.TASK.BL.csproj"
               },
-              "D:\\Study\\DoAnTotNghiep\\Project\\BE\\QVC.TASK\\QVC.TASK.Common\\QVC.TASK.Common.csproj": {
-                "projectPath": "D:\\Study\\DoAnTotNghiep\\Project\\BE\\QVC.TASK\\QVC.TASK.Common\\QVC.TASK.Common.csproj"
+              "E:\\CodeCuaEmCanh-KhongDuocXoa\\QVC.TASK\\qvc.task.be\\BE\\QVC.TASK\\QVC.TASK.Common\\QVC.TASK.Common.csproj": {
+                "projectPath": "E:\\CodeCuaEmCanh-KhongDuocXoa\\QVC.TASK\\qvc.task.be\\BE\\QVC.TASK\\QVC.TASK.Common\\QVC.TASK.Common.csproj"
               }
             }
           }
@@ -75,21 +75,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Study\\DoAnTotNghiep\\Project\\BE\\QVC.TASK\\QVC.TASK.BL\\QVC.TASK.BL.csproj": {
+    "E:\\CodeCuaEmCanh-KhongDuocXoa\\QVC.TASK\\qvc.task.be\\BE\\QVC.TASK\\QVC.TASK.BL\\QVC.TASK.BL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Study\\DoAnTotNghiep\\Project\\BE\\QVC.TASK\\QVC.TASK.BL\\QVC.TASK.BL.csproj",
+        "projectUniqueName": "E:\\CodeCuaEmCanh-KhongDuocXoa\\QVC.TASK\\qvc.task.be\\BE\\QVC.TASK\\QVC.TASK.BL\\QVC.TASK.BL.csproj",
         "projectName": "QVC.TASK.BL",
-        "projectPath": "D:\\Study\\DoAnTotNghiep\\Project\\BE\\QVC.TASK\\QVC.TASK.BL\\QVC.TASK.BL.csproj",
-        "packagesPath": "C:\\Users\\canhq\\.nuget\\packages\\",
-        "outputPath": "D:\\Study\\DoAnTotNghiep\\Project\\BE\\QVC.TASK\\QVC.TASK.BL\\obj\\",
+        "projectPath": "E:\\CodeCuaEmCanh-KhongDuocXoa\\QVC.TASK\\qvc.task.be\\BE\\QVC.TASK\\QVC.TASK.BL\\QVC.TASK.BL.csproj",
+        "packagesPath": "C:\\Users\\1chut\\.nuget\\packages\\",
+        "outputPath": "E:\\CodeCuaEmCanh-KhongDuocXoa\\QVC.TASK\\qvc.task.be\\BE\\QVC.TASK\\QVC.TASK.BL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\canhq\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\1chut\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -103,11 +103,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Study\\DoAnTotNghiep\\Project\\BE\\QVC.TASK\\QVC.TASK.Common\\QVC.TASK.Common.csproj": {
-                "projectPath": "D:\\Study\\DoAnTotNghiep\\Project\\BE\\QVC.TASK\\QVC.TASK.Common\\QVC.TASK.Common.csproj"
+              "E:\\CodeCuaEmCanh-KhongDuocXoa\\QVC.TASK\\qvc.task.be\\BE\\QVC.TASK\\QVC.TASK.Common\\QVC.TASK.Common.csproj": {
+                "projectPath": "E:\\CodeCuaEmCanh-KhongDuocXoa\\QVC.TASK\\qvc.task.be\\BE\\QVC.TASK\\QVC.TASK.Common\\QVC.TASK.Common.csproj"
               },
-              "D:\\Study\\DoAnTotNghiep\\Project\\BE\\QVC.TASK\\QVC.TASK.DL\\QVC.TASK.DL.csproj": {
-                "projectPath": "D:\\Study\\DoAnTotNghiep\\Project\\BE\\QVC.TASK\\QVC.TASK.DL\\QVC.TASK.DL.csproj"
+              "E:\\CodeCuaEmCanh-KhongDuocXoa\\QVC.TASK\\qvc.task.be\\BE\\QVC.TASK\\QVC.TASK.DL\\QVC.TASK.DL.csproj": {
+                "projectPath": "E:\\CodeCuaEmCanh-KhongDuocXoa\\QVC.TASK\\qvc.task.be\\BE\\QVC.TASK\\QVC.TASK.DL\\QVC.TASK.DL.csproj"
               }
             }
           }
@@ -147,21 +147,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Study\\DoAnTotNghiep\\Project\\BE\\QVC.TASK\\QVC.TASK.Common\\QVC.TASK.Common.csproj": {
+    "E:\\CodeCuaEmCanh-KhongDuocXoa\\QVC.TASK\\qvc.task.be\\BE\\QVC.TASK\\QVC.TASK.Common\\QVC.TASK.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Study\\DoAnTotNghiep\\Project\\BE\\QVC.TASK\\QVC.TASK.Common\\QVC.TASK.Common.csproj",
+        "projectUniqueName": "E:\\CodeCuaEmCanh-KhongDuocXoa\\QVC.TASK\\qvc.task.be\\BE\\QVC.TASK\\QVC.TASK.Common\\QVC.TASK.Common.csproj",
         "projectName": "QVC.TASK.Common",
-        "projectPath": "D:\\Study\\DoAnTotNghiep\\Project\\BE\\QVC.TASK\\QVC.TASK.Common\\QVC.TASK.Common.csproj",
-        "packagesPath": "C:\\Users\\canhq\\.nuget\\packages\\",
-        "outputPath": "D:\\Study\\DoAnTotNghiep\\Project\\BE\\QVC.TASK\\QVC.TASK.Common\\obj\\",
+        "projectPath": "E:\\CodeCuaEmCanh-KhongDuocXoa\\QVC.TASK\\qvc.task.be\\BE\\QVC.TASK\\QVC.TASK.Common\\QVC.TASK.Common.csproj",
+        "packagesPath": "C:\\Users\\1chut\\.nuget\\packages\\",
+        "outputPath": "E:\\CodeCuaEmCanh-KhongDuocXoa\\QVC.TASK\\qvc.task.be\\BE\\QVC.TASK\\QVC.TASK.Common\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\canhq\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\1chut\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -202,21 +202,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Study\\DoAnTotNghiep\\Project\\BE\\QVC.TASK\\QVC.TASK.DL\\QVC.TASK.DL.csproj": {
+    "E:\\CodeCuaEmCanh-KhongDuocXoa\\QVC.TASK\\qvc.task.be\\BE\\QVC.TASK\\QVC.TASK.DL\\QVC.TASK.DL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Study\\DoAnTotNghiep\\Project\\BE\\QVC.TASK\\QVC.TASK.DL\\QVC.TASK.DL.csproj",
+        "projectUniqueName": "E:\\CodeCuaEmCanh-KhongDuocXoa\\QVC.TASK\\qvc.task.be\\BE\\QVC.TASK\\QVC.TASK.DL\\QVC.TASK.DL.csproj",
         "projectName": "QVC.TASK.DL",
-        "projectPath": "D:\\Study\\DoAnTotNghiep\\Project\\BE\\QVC.TASK\\QVC.TASK.DL\\QVC.TASK.DL.csproj",
-        "packagesPath": "C:\\Users\\canhq\\.nuget\\packages\\",
-        "outputPath": "D:\\Study\\DoAnTotNghiep\\Project\\BE\\QVC.TASK\\QVC.TASK.DL\\obj\\",
+        "projectPath": "E:\\CodeCuaEmCanh-KhongDuocXoa\\QVC.TASK\\qvc.task.be\\BE\\QVC.TASK\\QVC.TASK.DL\\QVC.TASK.DL.csproj",
+        "packagesPath": "C:\\Users\\1chut\\.nuget\\packages\\",
+        "outputPath": "E:\\CodeCuaEmCanh-KhongDuocXoa\\QVC.TASK\\qvc.task.be\\BE\\QVC.TASK\\QVC.TASK.DL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\canhq\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\1chut\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -230,8 +230,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Study\\DoAnTotNghiep\\Project\\BE\\QVC.TASK\\QVC.TASK.Common\\QVC.TASK.Common.csproj": {
-                "projectPath": "D:\\Study\\DoAnTotNghiep\\Project\\BE\\QVC.TASK\\QVC.TASK.Common\\QVC.TASK.Common.csproj"
+              "E:\\CodeCuaEmCanh-KhongDuocXoa\\QVC.TASK\\qvc.task.be\\BE\\QVC.TASK\\QVC.TASK.Common\\QVC.TASK.Common.csproj": {
+                "projectPath": "E:\\CodeCuaEmCanh-KhongDuocXoa\\QVC.TASK\\qvc.task.be\\BE\\QVC.TASK\\QVC.TASK.Common\\QVC.TASK.Common.csproj"
               }
             }
           }
@@ -275,7 +275,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

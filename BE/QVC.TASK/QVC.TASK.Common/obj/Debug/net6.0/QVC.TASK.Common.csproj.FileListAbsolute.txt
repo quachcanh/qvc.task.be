@@ -22,3 +22,15 @@ D:\Study\ĐATN\BE\qvc.task.be\BE\QVC.TASK\QVC.TASK.Common\obj\Debug\net6.0\QVC.T
 D:\Study\ĐATN\BE\qvc.task.be\BE\QVC.TASK\QVC.TASK.Common\obj\Debug\net6.0\refint\QVC.TASK.Common.dll
 D:\Study\ĐATN\BE\qvc.task.be\BE\QVC.TASK\QVC.TASK.Common\obj\Debug\net6.0\QVC.TASK.Common.pdb
 D:\Study\ĐATN\BE\qvc.task.be\BE\QVC.TASK\QVC.TASK.Common\obj\Debug\net6.0\ref\QVC.TASK.Common.dll
+E:\CodeCuaEmCanh-KhongDuocXoa\QVC.TASK\qvc.task.be\BE\QVC.TASK\QVC.TASK.Common\bin\Debug\net6.0\QVC.TASK.Common.deps.json
+E:\CodeCuaEmCanh-KhongDuocXoa\QVC.TASK\qvc.task.be\BE\QVC.TASK\QVC.TASK.Common\bin\Debug\net6.0\QVC.TASK.Common.dll
+E:\CodeCuaEmCanh-KhongDuocXoa\QVC.TASK\qvc.task.be\BE\QVC.TASK\QVC.TASK.Common\bin\Debug\net6.0\QVC.TASK.Common.pdb
+E:\CodeCuaEmCanh-KhongDuocXoa\QVC.TASK\qvc.task.be\BE\QVC.TASK\QVC.TASK.Common\obj\Debug\net6.0\QVC.TASK.Common.csproj.AssemblyReference.cache
+E:\CodeCuaEmCanh-KhongDuocXoa\QVC.TASK\qvc.task.be\BE\QVC.TASK\QVC.TASK.Common\obj\Debug\net6.0\QVC.TASK.Common.GeneratedMSBuildEditorConfig.editorconfig
+E:\CodeCuaEmCanh-KhongDuocXoa\QVC.TASK\qvc.task.be\BE\QVC.TASK\QVC.TASK.Common\obj\Debug\net6.0\QVC.TASK.Common.AssemblyInfoInputs.cache
+E:\CodeCuaEmCanh-KhongDuocXoa\QVC.TASK\qvc.task.be\BE\QVC.TASK\QVC.TASK.Common\obj\Debug\net6.0\QVC.TASK.Common.AssemblyInfo.cs
+E:\CodeCuaEmCanh-KhongDuocXoa\QVC.TASK\qvc.task.be\BE\QVC.TASK\QVC.TASK.Common\obj\Debug\net6.0\QVC.TASK.Common.csproj.CoreCompileInputs.cache
+E:\CodeCuaEmCanh-KhongDuocXoa\QVC.TASK\qvc.task.be\BE\QVC.TASK\QVC.TASK.Common\obj\Debug\net6.0\QVC.TASK.Common.dll
+E:\CodeCuaEmCanh-KhongDuocXoa\QVC.TASK\qvc.task.be\BE\QVC.TASK\QVC.TASK.Common\obj\Debug\net6.0\refint\QVC.TASK.Common.dll
+E:\CodeCuaEmCanh-KhongDuocXoa\QVC.TASK\qvc.task.be\BE\QVC.TASK\QVC.TASK.Common\obj\Debug\net6.0\QVC.TASK.Common.pdb
+E:\CodeCuaEmCanh-KhongDuocXoa\QVC.TASK\qvc.task.be\BE\QVC.TASK\QVC.TASK.Common\obj\Debug\net6.0\ref\QVC.TASK.Common.dll
