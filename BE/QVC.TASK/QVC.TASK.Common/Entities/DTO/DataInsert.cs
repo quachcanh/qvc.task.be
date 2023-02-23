@@ -11,4 +11,10 @@ namespace QVC.TASK.Common
         public T Data { get; set; }
         public string DBDomain { get; set; }
     }
+
+    public class DataGetJob
+    {
+        public List<Guid> Id { get; set; }
+        public string DBDomain { get; set; }
+    }
 }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace QVC.TASK.BL
 {
-    public class EmployeeBL : IEmployeeBL
+    public class EmployeeBL : BaseBL<Employee>, IEmployeeBL
     {
         #region Field
 
@@ -19,7 +19,7 @@ namespace QVC.TASK.BL
 
         #region Constructor
 
-        public EmployeeBL(IEmployeeDL employeeDL)
+        public EmployeeBL(IEmployeeDL employeeDL) : base(employeeDL)
         {
             _employeeDL = employeeDL;
         }

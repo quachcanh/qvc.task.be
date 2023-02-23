@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace QVC.TASK.DL
 {
-    public class EmployeeDL : IEmployeeDL
+    public class EmployeeDL : BaseDL<Employee>, IEmployeeDL
     {
         /// <summary>
         /// Mở kết nối

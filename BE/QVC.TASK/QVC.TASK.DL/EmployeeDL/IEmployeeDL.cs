@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace QVC.TASK.DL
 {
-    public interface IEmployeeDL
+    public interface IEmployeeDL : IBaseDL<Employee>
     {
         /// <summary>
         /// Thêm mới bản ghi vào bảng nhân viên

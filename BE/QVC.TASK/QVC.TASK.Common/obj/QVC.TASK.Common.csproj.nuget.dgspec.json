@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\CodeCuaEmCanh-KhongDuocXoa\\QVC.TASK\\qvc.task.be\\BE\\QVC.TASK\\QVC.TASK.Common\\QVC.TASK.Common.csproj": {}
+    "D:\\Study\\DoAnTotNghiep\\Project\\BE\\QVC.TASK\\QVC.TASK.Common\\QVC.TASK.Common.csproj": {}
   },
   "projects": {
-    "E:\\CodeCuaEmCanh-KhongDuocXoa\\QVC.TASK\\qvc.task.be\\BE\\QVC.TASK\\QVC.TASK.Common\\QVC.TASK.Common.csproj": {
+    "D:\\Study\\DoAnTotNghiep\\Project\\BE\\QVC.TASK\\QVC.TASK.Common\\QVC.TASK.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\CodeCuaEmCanh-KhongDuocXoa\\QVC.TASK\\qvc.task.be\\BE\\QVC.TASK\\QVC.TASK.Common\\QVC.TASK.Common.csproj",
+        "projectUniqueName": "D:\\Study\\DoAnTotNghiep\\Project\\BE\\QVC.TASK\\QVC.TASK.Common\\QVC.TASK.Common.csproj",
         "projectName": "QVC.TASK.Common",
-        "projectPath": "E:\\CodeCuaEmCanh-KhongDuocXoa\\QVC.TASK\\qvc.task.be\\BE\\QVC.TASK\\QVC.TASK.Common\\QVC.TASK.Common.csproj",
-        "packagesPath": "C:\\Users\\1chut\\.nuget\\packages\\",
-        "outputPath": "E:\\CodeCuaEmCanh-KhongDuocXoa\\QVC.TASK\\qvc.task.be\\BE\\QVC.TASK\\QVC.TASK.Common\\obj\\",
+        "projectPath": "D:\\Study\\DoAnTotNghiep\\Project\\BE\\QVC.TASK\\QVC.TASK.Common\\QVC.TASK.Common.csproj",
+        "packagesPath": "C:\\Users\\canhq\\.nuget\\packages\\",
+        "outputPath": "D:\\Study\\DoAnTotNghiep\\Project\\BE\\QVC.TASK\\QVC.TASK.Common\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\1chut\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\canhq\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

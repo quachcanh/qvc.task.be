@@ -15,5 +15,9 @@ namespace QVC.TASK.Common
         public DateTime StartDay { get; set; }
         public DateTime EndDay { get; set; }
         public string Description { get; set; }
+        public Project()
+        {
+            ProjectID= Guid.NewGuid();
+        }
     }
 }

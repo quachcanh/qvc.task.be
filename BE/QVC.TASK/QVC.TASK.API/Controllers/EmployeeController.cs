@@ -4,9 +4,7 @@ using QVC.TASK.Common;
 
 namespace QVC.TASK.API.Controllers
 {
-    [Route("api/v2/[controller]")]
-    [ApiController]
-    public class EmployeeController : Controller
+    public class EmployeeController : BaseController<Employee>
     {
         #region Field
 
@@ -16,7 +14,7 @@ namespace QVC.TASK.API.Controllers
 
         #region Constructor
 
-        public EmployeeController(IEmployeeBL employeerBL)
+        public EmployeeController(IEmployeeBL employeerBL) : base(employeerBL)
         {
             _employeerBL = employeerBL;
         }
