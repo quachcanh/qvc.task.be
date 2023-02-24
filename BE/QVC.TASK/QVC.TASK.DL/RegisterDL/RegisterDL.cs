@@ -256,7 +256,7 @@ namespace QVC.TASK.DL
                 // Chuỗi kết nối
                 string connectionString = String.Format(Database.DBDomain, nameDatabase);
                 // Đọc file tạo bảng
-                string createTableSql = File.ReadAllText("..\\QVC.TASK.DL\\DBContext\\backup.sql").Replace("qvcanh_qvc-task", nameDatabase).Replace("DELIMITER $$", "").Replace("DEFINER = 'root'@'localhost'", "").Replace("END\r\n$$\r\n\r\nDELIMITER ;", "END;");
+                string createTableSql = File.ReadAllText("..\\QVC.TASK.DL\\DBContext\\backup.sql").Replace("quachcanh_qvc_task", nameDatabase).Replace("DELIMITER $$", "").Replace("DEFINER = 'root'@'localhost'", "").Replace("END\r\n$$\r\n\r\nDELIMITER ;", "END;");
                 //Kết nối đến db mới
                 using (var mysqlString = new MySql.Data.MySqlClient.MySqlConnection(connectionString))
                 {

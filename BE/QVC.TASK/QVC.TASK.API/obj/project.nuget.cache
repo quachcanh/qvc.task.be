@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Si8vMhO60Cxzhadex1oshLzHZFsY7a3UbYlWlqkyu7/7/Au3oOb0idrcCU40O5gVZC4+4UpVQmyaAJsG19sgCw==",
+  "dgSpecHash": "An9IBrbQTXP1SSgL8K19S3XY1DpDN2r4/ta4qQH87z4zhnfHMFMo9C5/rhirUoksUu3ds3EH0dBGAbPr4peMrA==",
   "success": true,
-  "projectFilePath": "D:\\Study\\DoAnTotNghiep\\Project\\BE\\QVC.TASK\\QVC.TASK.API\\QVC.TASK.API.csproj",
+  "projectFilePath": "D:\\Study\\ĐATN\\BE\\qvc.task.be\\BE\\QVC.TASK\\QVC.TASK.API\\QVC.TASK.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\canhq\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\canhq\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",
