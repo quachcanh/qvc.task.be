@@ -13,11 +13,11 @@ namespace QVC.TASK.Common
         public string JobName { get; set; }
         public Guid ProjectID { get; set; }
         public JobStatus JobStatus { get; set; }
-        public JobTag JobTag { get; set; }
-        public DateTime StartTime { get; set;}
-        public DateTime EndTime { get; set;}
+        public JobTag? JobTag { get; set; }
+        public DateTime? StartTime { get; set;}
+        public DateTime? EndTime { get; set;}
         public string Description { get; set; }
-        public Guid ParentID { get; set; }
+        public Guid? ParentID { get; set; }
         public Job()
         {
             JobID = Guid.NewGuid();

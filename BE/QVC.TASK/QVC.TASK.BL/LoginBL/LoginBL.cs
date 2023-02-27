@@ -49,9 +49,11 @@ namespace QVC.TASK.BL
                 {
                     // Lấy thông tin công ty để truy cập vào db
                     var res = _loginDL.GetCompanyByCode(login.CompanyCode);
-                    if (res != null && res.CreatedBy != null)
+                    if (res != null && res.UserName != null)
                     {
-                        login.Username = res.CreatedBy;
+                        session.DomainCompany = res.UserName + "_qvc_task";
+                        session.CompanyID = res.CompanyID;
+                        login.Domain = res.UserName;
                         employee = _loginDL.Login(login);
                     }
                 }
@@ -63,12 +65,13 @@ namespace QVC.TASK.BL
                         var user = _loginDL.GetUserNameByEmail(login.Email);
                         if (user != null)
                         {
-                            login.Username = user.UserName;
+                            login.Domain = user.UserName;
                             employee = _loginDL.Login(login);
                         }
                     }
                     else // Nhập username
                     {
+                        login.Domain = login.Username;
                         employee = _loginDL.Login(login);
                     }
                 }

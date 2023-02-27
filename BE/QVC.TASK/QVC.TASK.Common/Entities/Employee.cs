@@ -23,6 +23,7 @@ namespace QVC.TASK.Common
         public Guid? DepartmentID { get; set; }
         public Guid? PositionID { get; set; }
         public int Code { get; set; }
+        public QVC.TASK.Common.Enums.Role Role { get; set; }
         public Employee()
         {
             EmployeeID= Guid.NewGuid();

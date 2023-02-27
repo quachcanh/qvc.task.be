@@ -70,7 +70,7 @@ namespace QVC.TASK.DL
             var dataResult = new Employee();
 
             // Khởi tạo kết nối tới Database
-            using (var mySqlConnection = new MySqlConnector.MySqlConnection(String.Format(Database.DBDomain, login.Username + "_qvc_task")))
+            using (var mySqlConnection = new MySqlConnector.MySqlConnection(String.Format(Database.DBDomain, login.Domain + "_qvc_task")))
             {
                 // Mở kết nối
                 OpenConnection(mySqlConnection);

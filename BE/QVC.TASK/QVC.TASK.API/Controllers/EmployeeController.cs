@@ -27,7 +27,7 @@ namespace QVC.TASK.API.Controllers
         /// <param name="record"></param>
         /// <returns></returns>
         [HttpPost]
-        [Route("Insert")]
+        [Route("Insert-type")]
         public IActionResult Insert([FromBody] Employee record, DBType dbType)
         {
             try
@@ -49,5 +49,40 @@ namespace QVC.TASK.API.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, ex);
             }
         }
+
+        [HttpGet]
+        [Route("getall-user-dbinfo")]
+        public IActionResult GetAllUserDBInfo([FromQuery] string dbDomain, string dbInfo)
+        {
+            try
+            {
+
+                var resdomain = _employeerBL.GetAll(dbDomain);
+                var resinffo = _employeerBL.GetAll(dbInfo);
+                //Xử lú
+                if (resdomain?.Count > 0 || resinffo?.Count > 0)
+                {
+                    var results = resdomain.Union(resinffo).ToList();
+                    if (results?.Count > 0)
+                    {
+                        return StatusCode(StatusCodes.Status200OK, results);
+                    }
+                    else
+                    {
+                        return StatusCode(StatusCodes.Status400BadRequest, results);
+                    }
+                }
+                else
+                {
+                    return StatusCode(StatusCodes.Status400BadRequest);
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex);
+            }
+        }
+
+
     }
 }

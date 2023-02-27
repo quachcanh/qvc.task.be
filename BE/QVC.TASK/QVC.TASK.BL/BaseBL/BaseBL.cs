@@ -23,6 +23,7 @@ namespace QVC.TASK.BL
             _baseDL = baseDL;
         }
 
+        
         #endregion
 
         /// <summary>
@@ -46,6 +47,11 @@ namespace QVC.TASK.BL
             return _baseDL.GetAllById(id, domaindb);
         }
 
+        public T GetById(string id, string domaindb)
+        {
+            return _baseDL.GetById(id, domaindb);
+        }
+
         /// <summary>
         /// >Thêm mới 1 bản ghi
         /// </summary>
@@ -55,5 +61,16 @@ namespace QVC.TASK.BL
         {
             return _baseDL.Insert(dataInsert);
         }
+
+        public int Update(DataInsert<T> data)
+        {
+            return _baseDL.Update(data);
+        }
+
+        public int Delete(Guid id, string db)
+        {
+            return _baseDL.Delete(id,db);
+        }
+
     }
 }

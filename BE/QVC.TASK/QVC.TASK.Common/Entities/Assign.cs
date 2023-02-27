@@ -11,6 +11,10 @@ namespace QVC.TASK.Common
         public Guid AssignID { get; set; }
         public Guid EmployeeID { get; set; }
         public Guid JobID { get; set; }
-        public string Description { get; set; }
+        public string? Description { get; set; }
+        public Assign()
+        {
+            AssignID= Guid.NewGuid();
+        }
     }
 }

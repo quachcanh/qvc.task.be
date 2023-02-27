@@ -184,5 +184,165 @@ namespace QVC.TASK.DL
                 return rowAffected;
             };
         }
+
+        public T GetById(string id, string domaindb)
+        {
+            // Chuẩn bị tên stored procedure
+            string storedProcedureName = String.Format("Proc_GetOneById_{0}", typeof(T).Name);
+
+            // Chuẩn bị tham số đầu vào cho stored procedure
+            var parameters = new DynamicParameters();
+            parameters.Add("@Id", id);
+
+            // Khai báo đối tượng muốn lấy
+            T record;
+
+            // Khởi tạo kết nối tới Database
+            using (var mySqlConnection = new MySqlConnection(String.Format(Database.DBDomain, domaindb)))
+            {
+                // Mở kết nối
+                OpenConnection(mySqlConnection);
+
+                // Thực hiện gọi vào Database để chạy stored procedure
+                record = mySqlConnection.QueryFirstOrDefault<T>(storedProcedureName, parameters, commandType: System.Data.CommandType.StoredProcedure);
+
+                // Đóng kết nối
+                CloseConnection(mySqlConnection);
+            }
+
+            //Trả về đối tượng Employee
+            return record;
+        }
+
+        public int Update(DataInsert<T> data)
+        {
+            // Chuẩn bị tên stored procedure
+            string storedProcedureName = String.Format("Proc_Update_{0}", typeof(T).Name);
+
+            // Chuẩn bị tham số đầu vào cho stored procedure
+            var parameters = new DynamicParameters();
+            // Lấy toàn bộ property của class T
+            var props = typeof(T).GetProperties();
+
+            foreach (var item in props)
+            {
+                // Lấy tên của properties
+                var propertyName = item.Name;
+
+                // Lấy giá trị của properties
+                var propertyValue = item.GetValue(data.Data);
+                if (propertyName == RecordInformationName.MODIFIED_DATE)
+                {
+                    // Thêm tham số đầu vào cho parameters
+                    parameters.Add($"@{propertyName}", DateTime.Now);
+                }
+                else if(propertyName != RecordInformationName.CREATED_DATE || propertyName != RecordInformationName.CREATED_BY)
+                {
+                    parameters.Add($"@{propertyName}", propertyValue);
+                }
+            }
+
+            // Khởi tạo đối tượng muốn lấy
+            int rowAffected = 0;
+
+            // Khởi tạo kết nối tới Database
+            using (var mySqlConnection = new MySqlConnector.MySqlConnection(String.Format(Database.DBDomain, data.DBDomain)))
+            {
+                // Mở kết nối
+                OpenConnection(mySqlConnection);
+
+                // Khởi tạo Transaction
+                using var transaction = mySqlConnection.BeginTransaction();
+                try
+                {
+                    // Thực hiện gọi vào Database để chạy stored procedure
+                    rowAffected = mySqlConnection.Execute(storedProcedureName, parameters, transaction, commandType: System.Data.CommandType.StoredProcedure);
+
+                    // Kiểm tra kết quả
+                    if (rowAffected > 0)
+                    {
+                        // Commit transaction
+                        transaction.Commit();
+                    }
+                    else
+                    {
+                        // Rollback transaction
+                        transaction.Rollback();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Log lỗi
+                    Console.WriteLine(ex.Message);
+
+                    // Rollback transaction
+                    transaction.Rollback();
+                }
+                finally
+                {
+                    // Đóng kết nối
+                    CloseConnection(mySqlConnection);
+                }
+
+                // Trả về số bản ghi bị ảnh hưởng
+                return rowAffected;
+            };
+        }
+
+        public int Delete(Guid id, string db)
+        {
+            // Chuẩn bị tên stored procedure
+            string storedProcedureName = String.Format("Proc_DeleteById_{0}", typeof(T).Name);
+
+            // Chuẩn bị tham số đầu vào cho stored procedure
+            var parameters = new DynamicParameters();
+            parameters.Add("@Id", id);
+
+            // Khởi tạo đối tượng muốn lấy
+            int rowAffected = 0;
+
+            // Khởi tạo kết nối tới Database
+            using (var mySqlConnection = new MySqlConnector.MySqlConnection(String.Format(Database.DBDomain, db)))
+            {
+                // Mở kết nối
+                OpenConnection(mySqlConnection);
+
+                // Khởi tạo Transaction
+                using var transaction = mySqlConnection.BeginTransaction();
+                try
+                {
+                    // Thực hiện gọi vào Database để chạy stored procedure
+                    rowAffected = mySqlConnection.Execute(storedProcedureName, parameters, transaction, commandType: System.Data.CommandType.StoredProcedure);
+
+                    // Kiểm tra kết quả
+                    if (rowAffected > 0)
+                    {
+                        // Commit transaction
+                        transaction.Commit();
+                    }
+                    else
+                    {
+                        // Rollback transaction
+                        transaction.Rollback();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Log lỗi
+                    Console.WriteLine(ex.Message);
+
+                    // Rollback transaction
+                    transaction.Rollback();
+                }
+                finally
+                {
+                    // Đóng kết nối
+                    CloseConnection(mySqlConnection);
+                }
+
+                // Trả về số bản ghi bị ảnh hưởng
+                return rowAffected;
+            };
+        }
     }
 }

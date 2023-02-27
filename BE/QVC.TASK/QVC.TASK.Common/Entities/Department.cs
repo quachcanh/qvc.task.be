@@ -11,8 +11,8 @@ namespace QVC.TASK.Common
         public Guid DepartmentID { get; set; }
         public string DepartmentCode { get; set; }
         public string DepartmentName { get; set;}
-        public Guid CompanyID { get; set; }
-        public Guid ParentID { get; set;}
+        public Guid? CompanyID { get; set; }
+        public Guid? ParentID { get; set;}
         public Department()
         {
             DepartmentID = Guid.NewGuid();

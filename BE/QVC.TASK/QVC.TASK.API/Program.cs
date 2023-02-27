@@ -1,4 +1,5 @@
 ﻿using QVC.TASK.BL;
+using QVC.TASK.BL.CompanyBL;
 using QVC.TASK.DL;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,6 +20,10 @@ builder.Services.AddScoped(typeof(IEmployeeBL), typeof(EmployeeBL));
 builder.Services.AddScoped(typeof(IEmployeeDL), typeof(EmployeeDL));
 builder.Services.AddScoped(typeof(IJobBL), typeof(JobBL));
 builder.Services.AddScoped(typeof(IJobDL), typeof(JobDL));
+builder.Services.AddScoped(typeof(ICompanyBL), typeof(CompanyBL));
+builder.Services.AddScoped(typeof(ICompanyDL), typeof(CompanyDL));
+builder.Services.AddScoped(typeof(IAssignBL), typeof(AssignBL));
+builder.Services.AddScoped(typeof(IAssignDL), typeof(AssignDL));
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

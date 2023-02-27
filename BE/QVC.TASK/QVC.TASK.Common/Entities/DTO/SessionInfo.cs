@@ -12,6 +12,8 @@ namespace QVC.TASK.Common.Entities.DTO
         /// Token
         /// </summary>
         public string AccessToken { get; set; }
+        public string DomainCompany { get; set; }
+        public Guid CompanyID { get; set; }
 
         /// <summary>
         /// Thông tin người dùng

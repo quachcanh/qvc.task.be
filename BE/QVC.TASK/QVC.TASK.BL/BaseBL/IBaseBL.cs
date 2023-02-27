@@ -23,6 +23,7 @@ namespace QVC.TASK.BL
         /// <param name="domaindb"></param>
         /// <returns></returns>
         public List<T> GetAllById(string id, string domaindb);
+        public T GetById(string id, string domaindb);
 
         /// <summary>
         /// >Thêm mới 1 bản ghi
@@ -30,5 +31,7 @@ namespace QVC.TASK.BL
         /// <param name="dataInsert"></param>
         /// <returns></returns>
         public int Insert(DataInsert<T> dataInsert);
+        public int Update(DataInsert<T> data);
+        public int Delete(Guid id, string db);
     }
 }

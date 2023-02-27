@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>QVC.TASK.BL</id>
+    <version>1.0.0</version>
+    <authors>QVC.TASK.BL</authors>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework="net6.0">
+        <dependency id="QVC.TASK.Common" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="QVC.TASK.DL" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="13.0.2" exclude="Build,Analyzers" />
+        <dependency id="System.IdentityModel.Tokens.Jwt" version="6.27.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="D:\Study\DoAnTotNghiep\Project\BE\QVC.TASK\QVC.TASK.BL\bin\Debug\net6.0\QVC.TASK.BL.dll" target="lib\net6.0\QVC.TASK.BL.dll" />
+  </files>
+</package>

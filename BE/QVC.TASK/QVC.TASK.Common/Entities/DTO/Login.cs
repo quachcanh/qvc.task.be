@@ -20,6 +20,7 @@ namespace QVC.TASK.Common.Entities.DTO
         /// Username
         /// </summary>
         public string Username { get; set; }
+        public string Domain { get; set; }
 
         /// <summary>
         /// Email

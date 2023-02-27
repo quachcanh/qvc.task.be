@@ -33,6 +33,7 @@ namespace QVC.TASK.BL
             JobReports jobs = new JobReports();
 
             jobs.Complete = _jobDL.GetJobsComplete(id, dbDomain).Count;
+            jobs.Processing = _jobDL.GetJobsProcessing(id, dbDomain).Count;
             jobs.Todo = _jobDL.GetJobsToDo(id, dbDomain).Count;
             jobs.OutOfDate = _jobDL.GetJobsOutOfDate(id, dbDomain).Count;
             return jobs;
@@ -106,6 +107,10 @@ namespace QVC.TASK.BL
                         }
                     }
                 }
+            }
+            else
+            {
+                res = false;
             }
             return res;
         }
