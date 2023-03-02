@@ -10,6 +10,6 @@ namespace QVC.TASK.BL
 {
     public interface IAssignBL : IBaseBL<Assign>
     {
-        public List<AllTask> GetAllMyTask(Guid id, string dbdomain, string dbcompany);
+        public List<AllTask> GetAllMyTask(MyTaskInput input);
     }
 }

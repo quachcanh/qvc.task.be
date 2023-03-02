@@ -35,6 +35,7 @@ namespace QVC.TASK.BL
                 if (input.State == Common.Enums.State.CaNhan)
                 {
                     result = _departmentDL.GetAll(input.DBDomain);
+                    result.RemoveAll(d => d.CompanyID != null);
                 }
                 else
                 {
@@ -48,6 +49,7 @@ namespace QVC.TASK.BL
                     {
                         // Là nhân viên
                         var resDomain = _departmentDL.GetAll(input.DBDomain);
+                        resDomain.RemoveAll(d => d.CompanyID != null);
                         var resCompany = _departmentDL.GetAll(input.DBCompany);
                         if (resCompany?.Count > 0 || resDomain?.Count > 0)
                         {

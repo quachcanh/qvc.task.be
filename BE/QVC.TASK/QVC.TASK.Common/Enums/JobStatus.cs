@@ -11,5 +11,7 @@ namespace QVC.TASK.Common
         NeedToDo = 0,
         Processing = 1,
         Complete = 2,
+        OutOfDate = 3,
+        Assignment = 4
     }
 }

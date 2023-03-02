@@ -52,6 +52,8 @@ namespace QVC.TASK.DL
         /// <param name="domain"></param>
         /// <param name="fulname"></param>
         /// <returns></returns>
-        public int CreateDepartmentDefault(string domain, string fulname);
+        public int CreateDepartmentDefault(Guid id, string domain, string fulname);
+
+        public int CreateProjectDefault(Guid iddepart, string domain, string fulname);
     }
 }

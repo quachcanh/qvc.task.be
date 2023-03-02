@@ -27,22 +27,81 @@ namespace QVC.TASK.BL
             #endregion
         }
 
-        public List<AllTask> GetAllMyTask(Guid id, string dbdomain, string dbcompany)
+        public List<AllTask> GetAllMyTask(MyTaskInput input)
         {
-            List<AllTask> allTasks= new List<AllTask>();
-            List<AllTask> task2 = new List<AllTask>();
-            var task1 = _assignDL.GetAllMyTask(id, dbdomain);
-            if(dbcompany!= null && dbcompany!= string.Empty && dbcompany!="null")
+
+            List<AllTask> all = new List<AllTask>();
+
+            if (input != null)
             {
-                task2 = _assignDL.GetAllMyTask(id, dbcompany);
+                //Kiểm tra là cá nhân hay công ty
+                if (input.State == Common.Enums.State.CaNhan) // Cá nhân
+                {
+                    var task = _assignDL.GetAllMyTask(input.Id, input.DBDomain);
+                    task = task.Where(t => t.State == Common.Enums.State.CaNhan).ToList();
+                    // Lọc theo type công việc cần lấy
+                    if (task?.Count > 0)
+                    {
+                        // Việc cần làm
+                        if (input.Type == JobStatus.Processing)
+                        {
+                            all = task.Where(t => t.JobStatus == JobStatus.Processing).ToList();
+                        }
+                        // Việc đã hoàn thành
+                        if (input.Type == JobStatus.Complete)
+                        {
+                            all = task.Where(t => t.JobStatus == JobStatus.Complete).ToList();
+                        }
+                        // Việc quá hạn
+                        if (input.Type == JobStatus.OutOfDate)
+                        {
+                            // Lấy những công việc chưa hoàn thành
+                            task = task.Where(t => t.JobStatus != JobStatus.Complete).ToList();
+                            // Lấy những công việc có endtime nhỏ hơn ngày hiện tại
+                            DateTime currentDateTime = DateTime.Now; // lấy thời điểm hiện tại
+
+                            all = task.Where(t => t.EndTime != null && t.EndTime < currentDateTime).ToList();
+                        }
+                    }
+                }
+                else  // Công ty
+                {
+                    var taskdomain = _assignDL.GetAllMyTask(input.Id, input.DBDomain);
+                    var taskcompany = _assignDL.GetAllMyTask(input.Id, input.DBCompany);
+                    if (taskdomain?.Count > 0 || taskcompany?.Count > 0)
+                    {
+                        // Ghép 2 list với nhau
+                        var task = taskdomain.Concat(taskcompany).ToList();
+                        if(task?.Count > 0)
+                        {
+                            // Việc cần làm
+                            if (input.Type == JobStatus.Processing)
+                            {
+                                all = task.Where(t => t.JobStatus == JobStatus.Processing).ToList();
+                            }
+                            // Việc đã hoàn thành
+                            if (input.Type == JobStatus.Complete)
+                            {
+                                all = task.Where(t => t.JobStatus == JobStatus.Complete).ToList();
+                            }
+                            // Việc quá hạn
+                            if (input.Type == JobStatus.OutOfDate)
+                            {
+                                // Lấy những công việc chưa hoàn thành
+                                task = task.Where(t => t.JobStatus != JobStatus.Complete).ToList();
+                                // Lấy những công việc có endtime nhỏ hơn ngày hiện tại
+                                DateTime currentDateTime = DateTime.Now; // lấy thời điểm hiện tại
+                                all = task.Where(t => t.EndTime != null && t.EndTime < currentDateTime).ToList();
+                            }
+                            // Việc giao cho tôi
+                            if(input.Type == JobStatus.Assignment) {
+                                all = taskcompany;
+                            }
+                        }
+                    }
+                }
             }
-            
-            if(task1?.Count>0|| task2?.Count>0)
-            {
-                allTasks = task1.Concat(task2).ToList();
-                
-            }
-            return allTasks.Distinct().ToList();
+            return all;
         }
     }
 }

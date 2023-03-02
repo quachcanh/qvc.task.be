@@ -14,4 +14,12 @@ namespace QVC.TASK.Common.Entities.DTO
         public State State { get; set; }
     }
     
+    public class MyTaskInput
+    {
+        public Guid Id { get; set; }
+        public string DBDomain { get; set; }
+        public string DBCompany { get; set; }
+        public State State { get; set; }
+        public JobStatus Type { get; set; }
+    }
 }

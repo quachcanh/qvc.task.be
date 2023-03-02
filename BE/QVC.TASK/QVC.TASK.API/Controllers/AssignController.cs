@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using QVC.TASK.BL;
 using QVC.TASK.Common;
+using QVC.TASK.Common.Entities.DTO;
 
 namespace QVC.TASK.API.Controllers
 {
@@ -23,13 +24,13 @@ namespace QVC.TASK.API.Controllers
 
         #region Method
 
-        [HttpGet]
+        [HttpPost]
         [Route("GetAllMyTask")]
-        public IActionResult GetAllMyTask(Guid id, string dbdomain, string dbcompany)
+        public IActionResult GetAllMyTask(MyTaskInput input)
         {
             try
             {
-                var record = _assignBL.GetAllMyTask(id, dbdomain, dbcompany);
+                var record = _assignBL.GetAllMyTask(input);
 
                 //Xử lý kết quả trả về
                 if (record != null)

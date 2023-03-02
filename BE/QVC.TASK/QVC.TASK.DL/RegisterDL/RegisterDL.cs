@@ -256,7 +256,7 @@ namespace QVC.TASK.DL
                 // Chuỗi kết nối
                 string connectionString = String.Format(Database.DBDomain, nameDatabase);
                 // Đọc file tạo bảng
-                string createTableSql = File.ReadAllText("..\\QVC.TASK.DL\\DBContext\\backup.sql").Replace("quachcanh_qvc_task", nameDatabase).Replace("DELIMITER $$", "").Replace("DEFINER = 'root'@'localhost'", "").Replace("END\r\n$$\r\n\r\nDELIMITER ;", "END;");
+                string createTableSql = File.ReadAllText("..\\QVC.TASK.DL\\DBContext\\backup.sql").Replace("test2_qvc_task", nameDatabase);
                 //Kết nối đến db mới
                 using (var mysqlString = new MySql.Data.MySqlClient.MySqlConnection(connectionString))
                 {
@@ -273,7 +273,12 @@ namespace QVC.TASK.DL
                 if (rowchange > 0)
                 {
                     // Tạo phòng ban cá nhân mặc định
-                    rowchange = CreateDepartmentDefault(record.UserName, record.EmployeeName);
+                    Guid id = Guid.NewGuid();
+                    rowchange = CreateDepartmentDefault(id, record.UserName, record.EmployeeName);
+                    if(rowchange > 0)
+                    {
+                        rowchange = CreateProjectDefault(id, record.UserName, record.EmployeeName);
+                    }
                 }
                 CloseConnection(mySqlConnection);
             }
@@ -364,7 +369,7 @@ namespace QVC.TASK.DL
         /// </summary>
         /// <param name="department"></param>
         /// <returns></returns>
-        public int CreateDepartmentDefault(string domain, string fulname)
+        public int CreateDepartmentDefault(Guid id, string domain, string fulname)
         {
             // Chuẩn bị tên stored procedure
             string storedProcedureName = "Proc_Insert_Department";
@@ -373,7 +378,7 @@ namespace QVC.TASK.DL
             var parameters = new DynamicParameters();
 
             // Thêm tham số đầu vào cho parameters
-            parameters.Add("@DepartmentID", Guid.NewGuid());
+            parameters.Add("@DepartmentID", id);
             parameters.Add("@DepartmentCode", "CANHAN");
             parameters.Add("@DepartmentName", "Cá nhân");
             parameters.Add("@CompanyID", null);
@@ -382,6 +387,74 @@ namespace QVC.TASK.DL
             parameters.Add("@CreatedBy", fulname);
             parameters.Add("@ModifiedDate", DateTime.Now);
             parameters.Add("@ModifiedBy", "");
+
+            // Khởi tạo đối tượng muốn lấy
+            int rowAffected = 0;
+
+            // Khởi tạo kết nối tới Database
+            using (var mySqlConnection = new MySqlConnector.MySqlConnection(String.Format(Database.DBDomain, domain + "_qvc_task")))
+            {
+                // Mở kết nối
+                OpenConnection(mySqlConnection);
+
+                // Khởi tạo Transaction
+                using var transaction = mySqlConnection.BeginTransaction();
+                try
+                {
+                    // Thực hiện gọi vào Database để chạy stored procedure
+                    rowAffected = mySqlConnection.Execute(storedProcedureName, parameters, transaction, commandType: System.Data.CommandType.StoredProcedure);
+
+                    // Kiểm tra kết quả
+                    if (rowAffected > 0)
+                    {
+                        // Commit transaction
+                        transaction.Commit();
+                    }
+                    else
+                    {
+                        // Rollback transaction
+                        transaction.Rollback();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Log lỗi
+                    Console.WriteLine(ex.Message);
+
+                    // Rollback transaction
+                    transaction.Rollback();
+                }
+                finally
+                {
+                    // Đóng kết nối
+                    CloseConnection(mySqlConnection);
+                }
+
+                // Trả về số bản ghi bị ảnh hưởng
+                return rowAffected;
+            };
+        }
+
+        public int CreateProjectDefault(Guid iddepart, string domain, string fulname)
+        {
+            // Chuẩn bị tên stored procedure
+            string storedProcedureName = "Proc_Insert_Project";
+
+            // Chuẩn bị tham số đầu vào cho stored procedure
+            var parameters = new DynamicParameters();
+
+            // Thêm tham số đầu vào cho parameters
+            parameters.Add("@ProjectID", Guid.NewGuid());
+            parameters.Add("@ProjectCode", "CONGVIECCANHAN");
+            parameters.Add("@ProjectName", "Công việc cá nhân");
+            parameters.Add("@DepartmentID", iddepart);
+            parameters.Add("@StartDay", DateTime.Now);
+            parameters.Add("@EndDay", null);
+            parameters.Add("@Description", string.Empty);
+            parameters.Add("@CreatedDate", DateTime.Now);
+            parameters.Add("@CreatedBy", fulname);
+            parameters.Add("@ModifiedDate", DateTime.Now);
+            parameters.Add("@ModifiedBy", string.Empty);
 
             // Khởi tạo đối tượng muốn lấy
             int rowAffected = 0;
