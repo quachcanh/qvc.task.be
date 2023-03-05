@@ -21,5 +21,7 @@ namespace QVC.TASK.Common.Entities.DTO
         public string DBCompany { get; set; }
         public State State { get; set; }
         public JobStatus Type { get; set; }
+        public TypeSort TypeSort { get; set;} = TypeSort.EndTimeASC;
+
     }
 }

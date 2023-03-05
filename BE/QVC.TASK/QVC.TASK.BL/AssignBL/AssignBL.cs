@@ -1,9 +1,11 @@
 ﻿using QVC.TASK.Common;
 using QVC.TASK.Common.Entities.DTO;
+using QVC.TASK.Common.Enums;
 using QVC.TASK.DL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -62,6 +64,8 @@ namespace QVC.TASK.BL
 
                             all = task.Where(t => t.EndTime != null && t.EndTime < currentDateTime).ToList();
                         }
+
+
                     }
                 }
                 else  // Công ty
@@ -72,7 +76,7 @@ namespace QVC.TASK.BL
                     {
                         // Ghép 2 list với nhau
                         var task = taskdomain.Concat(taskcompany).ToList();
-                        if(task?.Count > 0)
+                        if (task?.Count > 0)
                         {
                             // Việc cần làm
                             if (input.Type == JobStatus.Processing)
@@ -94,11 +98,43 @@ namespace QVC.TASK.BL
                                 all = task.Where(t => t.EndTime != null && t.EndTime < currentDateTime).ToList();
                             }
                             // Việc giao cho tôi
-                            if(input.Type == JobStatus.Assignment) {
+                            if (input.Type == JobStatus.Assignment)
+                            {
                                 all = taskcompany;
                             }
                         }
                     }
+                }
+                // Sắp xếp lại công việc
+                switch (input.TypeSort)
+                {
+                    case TypeSort.EndTimeASC:
+                        // code block
+                        all = all.OrderBy(t => t.EndTime).ToList();
+                        break;
+                    case TypeSort.EndTimeDESC:
+                        // code block
+                        all = all.OrderByDescending(t => t.EndTime).ToList();
+                        break;
+                    case TypeSort.StartTimeASC:
+                        // code block
+                        all = all.OrderBy(t => t.StartTime).ToList();
+                        break;
+                    case TypeSort.StartTimeDESC:
+                        // code block
+                        all = all.OrderByDescending(t => t.StartTime).ToList();
+                        break;
+                    case TypeSort.CreatedDateASC:
+                        // code block
+                        all = all.OrderBy(t => t.CreatedDate).ToList();
+                        break;
+                    case TypeSort.CreatedDateDESC:
+                        // code block
+                        all = all.OrderByDescending(t => t.CreatedDate).ToList();
+                        break;
+                    default:
+                        // code block
+                        break;
                 }
             }
             return all;
