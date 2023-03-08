@@ -1,4 +1,5 @@
 ﻿using QVC.TASK.Common;
+using QVC.TASK.Common.Entities.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,5 +27,7 @@ namespace QVC.TASK.BL
         public List<Job> GetJobsProcessing(Guid id, string domaindb);
 
         public List<Job> GetJobsToDo(Guid id, string domaindb);
+
+        public List<JobOutput> GetAllJobByIdProject(JobAllInput input);
     }
 }

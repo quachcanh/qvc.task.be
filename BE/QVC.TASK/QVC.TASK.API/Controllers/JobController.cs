@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using QVC.TASK.BL;
 using QVC.TASK.Common;
+using QVC.TASK.Common.Entities.DTO;
 
 namespace QVC.TASK.API.Controllers
 {
@@ -149,6 +150,30 @@ namespace QVC.TASK.API.Controllers
             try
             {
                 var record = _jobBL.GetJobsComplete(id, dbDomain);
+
+                //Xử lý kết quả trả về
+                if (record != null)
+                {
+                    return StatusCode(StatusCodes.Status200OK, record);
+                }
+                else
+                {
+                    return StatusCode(StatusCodes.Status404NotFound);
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex);
+            }
+        }
+
+        [HttpPost]
+        [Route("GetAllJobByIdProject")]
+        public IActionResult GetAllJobByIdProject(JobAllInput input)
+        {
+            try
+            {
+                var record = _jobBL.GetAllJobByIdProject(input);
 
                 //Xử lý kết quả trả về
                 if (record != null)

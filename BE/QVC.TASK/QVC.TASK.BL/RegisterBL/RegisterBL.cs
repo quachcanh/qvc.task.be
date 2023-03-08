@@ -41,7 +41,7 @@ namespace QVC.TASK.BL
             // Gửi Email xác thực
             if (result > 0)
             {
-                SentEmail(record);
+                //SentEmail(record);
             }
             return result;
         }

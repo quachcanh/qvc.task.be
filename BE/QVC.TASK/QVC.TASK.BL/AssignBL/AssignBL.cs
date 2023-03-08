@@ -4,10 +4,13 @@ using QVC.TASK.Common.Enums;
 using QVC.TASK.DL;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using Humanizer;
+using FluentDateTime;
 
 namespace QVC.TASK.BL
 {
@@ -76,6 +79,8 @@ namespace QVC.TASK.BL
                     {
                         // Ghép 2 list với nhau
                         var task = taskdomain.Concat(taskcompany).ToList();
+                        // Bỏ những công việc trùng nhau
+                        task = task.GroupBy(t => t.JobID).Select(t => t.First()).ToList();
                         if (task?.Count > 0)
                         {
                             // Việc cần làm
@@ -135,6 +140,72 @@ namespace QVC.TASK.BL
                     default:
                         // code block
                         break;
+                }
+
+                // Lọc theo input search
+                if (input.Search != null)
+                {
+                    all = all.Where(t => t.JobName.IndexOf(input.Search, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    t.DepartmentName.IndexOf(input.Search, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    t.ProjectName.IndexOf(input.Search, StringComparison.OrdinalIgnoreCase) >= 0)
+                        .ToList();
+                }
+                // Lọc theo hạn hoàn thành
+                if (input.DateOption != DateOption.None)
+                {
+                    switch (input.DateOption)
+                    {
+                        case DateOption.ToDay:
+                            all = all.Where(t => t.EndTime?.Date == DateTime.Now.Date).ToList();
+                            break;
+                        case DateOption.ThisWeek:
+                            DayOfWeek dayOfWeek = DateTime.Now.DayOfWeek;
+                            DateTime mondayOfWeek = DateTime.Now.AddDays(-(int)dayOfWeek + 1);
+                            DateTime sundayOfWeek = DateTime.Now.AddDays(7 - (int)dayOfWeek);
+                            all = all.Where(t => t.EndTime?.Date >= mondayOfWeek.Date && t.EndTime?.Date <= sundayOfWeek.Date).ToList();
+                            break;
+                        case DateOption.LastWeek:
+                            DateTime mondayOfLastWeek = DateTime.Now.AddDays(-(int)DateTime.Now.DayOfWeek - 6);
+                            DateTime sundayOfLastWeek = mondayOfLastWeek.AddDays(6);
+                            all = all.Where(t => t.EndTime?.Date >= mondayOfLastWeek.Date && t.EndTime?.Date <= sundayOfLastWeek.Date).ToList();
+                            break;
+                        case DateOption.ThisMonth:
+                            // Ngày đầu tiên của tháng
+                            DateTime firstDayOfMonth = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+                            // Ngày cuối cùng của tháng
+                            DateTime lastDayOfMonth = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month));
+                            all = all.Where(t => t.EndTime?.Date >= firstDayOfMonth.Date && t.EndTime?.Date <= lastDayOfMonth.Date).ToList();
+                            break;
+                        case DateOption.LastMonth:
+                            DateTime firstDayOfLastMonth = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1).AddMonths(-1);
+                            DateTime lastDayOfLastMonth = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1).AddDays(-1);
+                            all = all.Where(t => t.EndTime?.Date >= firstDayOfLastMonth.Date && t.EndTime?.Date <= lastDayOfLastMonth.Date).ToList();
+                            break;
+                        case DateOption.Other:
+                            if(input.StartDate!= null || input.EndDate != null)
+                            {
+                                if(input.StartDate != null && input.EndDate == null)
+                                {
+                                    all = all.Where(t => t.EndTime?.Date >= input.StartDate?.Date).ToList();
+                                }
+                                else if(input.StartDate == null && input.EndDate != null)
+                                {
+                                    all = all.Where(t => t.EndTime?.Date <= input.EndDate?.Date ).ToList();
+                                }
+                                else if(input.StartDate != null && input.EndDate != null)
+                                {
+                                    all = all.Where(t => t.EndTime?.Date >= input.StartDate?.Date && t.EndTime?.Date <= input.EndDate?.Date).ToList();
+                                }
+                            }
+                            break;
+                        default:
+                            // code block
+                            break;
+                    }
+                }
+                else
+                {
+
                 }
             }
             return all;

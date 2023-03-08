@@ -63,16 +63,18 @@ namespace QVC.TASK.API.Controllers
                 //Xử lú
                 if (resdomain?.Count > 0 || resinffo?.Count > 0)
                 {
-                    if(type == TypeGetEmp.Assign)
+                    if (type == TypeGetEmp.Assign)
                     {
                         List<Employee> employees = resdomain.Concat(resinffo).ToList();
                         results = employees.GroupBy(e => e.EmployeeID).Select(g => g.First()).ToList();
                     }
-                    else if(type == TypeGetEmp.Add)
+                    else if (type == TypeGetEmp.Add)
                     {
-                        results = resdomain.Where(e => !resinffo.Any(r => r.EmployeeID == e.EmployeeID)).ToList();
+                        HashSet<Guid> ids = new HashSet<Guid>(resdomain.Select(e => e.EmployeeID));
+                        results = resinffo.Where(e => !ids.Contains(e.EmployeeID)).ToList();
+
                     }
-                    
+
                     if (results != null)
                     {
                         return StatusCode(StatusCodes.Status200OK, results);

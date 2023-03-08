@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using MySqlConnector;
 using QVC.TASK.Common;
+using QVC.TASK.Common.Entities.DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -64,6 +65,35 @@ namespace QVC.TASK.DL
 
             //Trả về đối tượng Employee
             return record;
+        }
+
+        public List<JobOutput> GetAllJobByIdProject(Guid id, string dbdomanin)
+        {
+            // Chuẩn bị tên stored procedure
+            string storedProcedureName = String.Format("Proc_GetAll_Job_ById_Project");
+
+            // Chuẩn bị tham số đầu vào cho stored procedure
+            var parameters = new DynamicParameters();
+            parameters.Add("@Id", id);
+
+            // Khai báo đối tượng muốn lấy
+            List<JobOutput> allTasks = new List<JobOutput>();
+
+            // Khởi tạo kết nối tới Database
+            using (var mySqlConnection = new MySqlConnection(String.Format(Database.DBDomain, dbdomanin)))
+            {
+                // Mở kết nối
+                OpenConnection(mySqlConnection);
+
+                // Thực hiện gọi vào Database để chạy stored procedure
+                allTasks = mySqlConnection.Query<JobOutput>(storedProcedureName, parameters, commandType: System.Data.CommandType.StoredProcedure).ToList();
+
+                // Đóng kết nối
+                CloseConnection(mySqlConnection);
+            }
+
+            //Trả về đối tượng Employee
+            return allTasks;
         }
 
         public List<Job> GetJobsOutOfDate(Guid id, string domaindb)

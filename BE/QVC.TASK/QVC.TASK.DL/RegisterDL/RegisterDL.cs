@@ -256,7 +256,7 @@ namespace QVC.TASK.DL
                 // Chuỗi kết nối
                 string connectionString = String.Format(Database.DBDomain, nameDatabase);
                 // Đọc file tạo bảng
-                string createTableSql = File.ReadAllText("..\\QVC.TASK.DL\\DBContext\\backup.sql").Replace("test2_qvc_task", nameDatabase);
+                string createTableSql = File.ReadAllText("..\\QVC.TASK.DL\\DBContext\\backup.sql").Replace("trang_qvc_task", nameDatabase);
                 //Kết nối đến db mới
                 using (var mysqlString = new MySql.Data.MySqlClient.MySqlConnection(connectionString))
                 {

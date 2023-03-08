@@ -12,8 +12,8 @@ namespace QVC.TASK.Common
         public string ProjectCode { get; set; }
         public string ProjectName { get; set; }
         public Guid DepartmentID { get; set; }
-        public DateTime StartDay { get; set; }
-        public DateTime EndDay { get; set; }
+        public DateTime? StartDay { get; set; }
+        public DateTime? EndDay { get; set; }
         public string Description { get; set; }
         public Project()
         {
